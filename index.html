@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="rsc/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 
-
-
     <style>
         :root {
             --primary-accent: #ff2e63; 
@@ -25,36 +23,38 @@
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(255, 46, 99, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(8, 217, 214, 0.05) 0%, transparent 20%)}
+                radial-gradient(circle at 90% 80%, rgba(8, 217, 214, 0.05) 0%, transparent 20%);
+        }
     
-.navbar {
+        .navbar {
             background: rgba(0, 0, 0, 0.9) !important;
             backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--primary-accent);
+            border-bottom: 0.125rem solid var(--primary-accent);
             padding: 1.2rem 0;
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(255, 46, 99, 0.5);
+            text-shadow: 0 0 0.625rem rgba(255, 46, 99, 0.5);
         }
 
         .nav-link {
             color: #ccc !important;
             font-weight: 600;
-            margin: 0 12px;
+            margin: 0 0.75rem;
             font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
         .nav-link:hover, .nav-link.active {
             color: white !important;
-            text-shadow: 0 0 8px var(--secondary-accent);
+            text-shadow: 0 0 0.5rem var(--secondary-accent);
         }
+        
         .carousel {
-   height:100vh;
- }
+            height: 100vh;
+        }
 
         .hero-section {
             height: 90vh;
@@ -70,19 +70,20 @@
         }
 
         .hero-title {
-            font-size: 5rem;
+            font-size: clamp(3rem, 10vw, 6rem); 
             font-weight: 800;
-            text-shadow: 4px 4px 0px var(--primary-accent);
-            margin-bottom: 20px;
+            text-shadow: 0.25rem 0.25rem 0px var(--primary-accent);
+            margin-bottom: 2vh;
         }
+
         .section-header {
-            margin-bottom: 60px;
+            margin-bottom: 4rem;
             position: relative;
             display: inline-block;
         }
 
         .section-header h2 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             color: white;
         }
@@ -91,20 +92,20 @@
             content: '';
             display: block;
             width: 60%;
-            height: 6px;
+            height: 0.375rem;
             background: var(--primary-accent);
-            margin-top: 10px;
+            margin-top: 0.625rem;
         }
 
         .page-section {
-            padding: 100px 0;
+            padding: 10vh 0; 
             display: none;
             animation: slideUp 0.8s ease-out;
         }
         .page-section.active { display: block; }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(2.5rem); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -113,36 +114,41 @@
             padding-bottom: 56.25%;
             height: 0;
             background: #222;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.5);
             border: 2px solid #333;
-            margin-top: 15px;
+            margin-top: 1rem;
             overflow: hidden;
         }
         .video-wrapper iframe {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
         }
-        
-     
-
 
         .pillar-card {
             background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            border-left: 5px solid var(--secondary-accent);
+            border-left: 0.3125rem solid var(--secondary-accent);
             padding: 2rem;
             margin-bottom: 2rem;
         }
 
         .legend-item {
             background: #222;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-left: 3px solid var(--primary-accent);
+            padding: 0.625rem;
+            margin-bottom: 0.3125rem;
+            border-left: 0.1875rem solid var(--primary-accent);
             transition: 0.3s;
         }
         .legend-item:hover {
             background: #333;
-            padding-left: 20px;
+            padding-left: 1.25rem;
+        }
+        
+        .img-center-responsive {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -167,7 +173,6 @@
                     <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
                      <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
                 </ul>
-                </ul>
             </div>
         </div>
     </nav>
@@ -181,10 +186,10 @@
                 
             </div>
         </div>
-        <div class=" row align-items-center container-fluid px-5 py-5 bg-black">
+        <div class="container-fluid px-5 py-5 bg-black">
             <div class="row align-items-center">
-                <div class="col-lg-6 ">
-                    <img style="margin-left: 40%;"src="assets/index/images/final.svg">
+                <div class="col-lg-6 d-flex justify-content-center mb-4 mb-lg-0">
+                    <img style="width: 50%;" class="img-fluid" src="assets/index/images/final.svg" alt="Project Icon">
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <h2 class="display-4 fw-bold text-uppercase mb-4" style="color:var(--primary-accent)">The Project</h2>
@@ -194,28 +199,34 @@
             </div>
         </div>
     </div>
+
+    
+
+[Image of hip hop dance style]
+
+
     <section class="category">
 <div class="container marketing mt-5 text-center">
     <h1 class="text-center text-light mb-5">Explore more about Dances!</h1>
        
         <div class="row">
-          <div class="col-lg-3 text-light">
+          <div class="col-lg-3 col-md-6 mb-4 text-light">
             <h2>HipHop</h2>
             <p>A dynamic dance style that emphasizes rhythm, freestyle, and urban culture.</p>
             <p><a class="btn btn-danger" href="hiphop.html" role="button">View details &raquo;</a></p>
           </div>
-          <div class="col-lg-3 text-light">
+          <div class="col-lg-3 col-md-6 mb-4 text-light">
             <h2>Folk Dance</h2>
             <p>Traditional dances that reflect cultural heritage, community life, and storytelling.</p>
             <p><a class="btn btn-danger" href="folkdance.html" role="button">View details &raquo;</a></p>
           </div>
-          <div class="col-lg-3 text-light">
+          <div class="col-lg-3 col-md-6 mb-4 text-light">
 
             <h2>Ballroom</h2>
             <p>Traditional dances that reflect cultural heritage, community life, and storytelling..</p>
             <p><a class="btn btn-danger" href="ballroom.html" role="button">View details &raquo;</a></p>
           </div>
-          <div class="col-lg-3 text-light">
+          <div class="col-lg-3 col-md-6 mb-4 text-light">
 
             <h2>Contemporary</h2>
             <p>A fluid style blending ballet, modern, and jazz with emotional storytelling.</p>
@@ -224,53 +235,54 @@
         </div>
 </section>
 
-<hr class="featurette-divider">
+<hr class="featurette-divider" style="margin: 3rem 0; opacity: 0.2;">
 <div id="mouseLight" class="mouse-light"></div>
 
 <section class="Features">
   <div class="container-fluid mt-5">
-        <div class="row featurette">
-          <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+        <div class="row featurette align-items-center">
+          <div class="col-md-6 order-2 order-md-1">
             <h2 class="featurette-heading text-light fw-bold">Want to learn about Dance Fundamentals? <span class=" text-light">It'll blow your mind.</span></h2>
             <p class="lead text-light">Dance is a superpower, once you learn the basics, you’ll move with confidence, style, and flair. From grooving to beats to gliding across the floor, the fundamentals unlock a whole new world of fun.</p>
-            <div class="text-center">
+            <div class="text-center text-md-start">
                 <p><a class="btn btn-danger mt-3" href="dance_fund.html" role="button">View details &raquo;</a></p>
             </div>
           </div>
-          <div class="col-md-6">
-            <img class="featurette-image img-fluid " src="assets/index/images/whitney-houston(wannadancewithsomebody).webp" alt="Generic placeholder image">
+          <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+            <img class="featurette-image img-fluid mx-auto d-block" src="assets/index/images/whitney-houston(wannadancewithsomebody).webp" alt="Generic placeholder image">
           </div>
         </div>
-<hr class="featurette-divider">
 
-        <div class="row featurette">
+<hr class="featurette-divider" style="margin: 3rem 0; opacity: 0.2;">
+
+        <div class="row featurette align-items-center">
           <div class="col-md-6 order-md-2 text-light">
             <h2 class="featurette-heading fw-bold">Live Events? We Got You! See for yourself.</h2>
             <p class="lead">From dance battles to cultural showcases, our live events bring the energy front and center. Come for the moves, stay for the vibes, you won’t want to miss a beat.</p>
-            <div class="text-center">
+            <div class="text-center text-md-start">
                 <p><a class="btn btn-danger mt-3" href="dance.html" role="button">View details &raquo;</a></p>
             </div>
           </div>
-          <div class="col-md-6 order-md-1">
-            <img  class="featurette-image img-fliud my-40" style="margin-left: 15%;" src="assets/index/images/fly-high-in-red.png" alt="Generic placeholder image">
+          <div class="col-md-6 order-md-1 mb-4 mb-md-0">
+            <img class="featurette-image img-fluid mx-auto d-block" style="max-height: 50vh;" src="assets/index/images/fly-high-in-red.png" alt="Generic placeholder image">
           </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" style="margin: 3rem 0; opacity: 0.2;">
 
-        <div class="row featurette">
+        <div class="row featurette align-items-center">
           <div class="col-md-6">
             <h2 class="featurette-heading text-light">Having Difficulty Navigating?<span class="text-light"> Click here for tutorials</span></h2>
-            <div class="text-center">
+            <div class="text-center text-md-start">
                 <p><a class="btn btn-danger mt-3" href="help.html" role="button">Website Tutorial &raquo;</a></p>
             </div>
           </div>
-          <div class="col-md-6 mb-5">
-            <img class="featurette-image img-fluid mx-auto" src="assets/index/images/ultrasadperson.webp" alt="Generic placeholder image" style="box-shadow: 0px 0px 20px 10px #201f20; ">
+          <div class="col-md-6 mb-5 mt-4 mt-md-0">
+            <img class="featurette-image img-fluid mx-auto d-block" src="assets/index/images/ultrasadperson.webp" alt="Generic placeholder image" style="box-shadow: 0px 0px 20px 10px #201f20;">
           </div>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" style="margin: 3rem 0; opacity: 0.2;">
 
 
 
